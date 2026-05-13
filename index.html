@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="https://ahmadfx.xyz/Images/portfolio_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -32,9 +32,9 @@
   --amber:#F0B429;--adim:rgba(240,180,41,0.11);
   --blue:#4B7BF5;--teal:#2DD4C8;--orange:#F07832;--purple:#A78BFA;--pink:#F472B6;
   --bd:rgba(242,237,216,0.08);--bd2:rgba(242,237,216,0.15);
-  --serif:'Fraunces',Georgia,serif;
-  --mono:'Space Mono',monospace;
-  --sans:'Plus Jakarta Sans',sans-serif;
+  --serif:'Chakra Petch',sans-serif;
+  --mono:'Chakra Petch',monospace;
+  --sans:'Chakra Petch',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -189,7 +189,7 @@ const T={
   bg:'#0B0D14',surf:'#131520',surf2:'#1A1D2C',
   text:'#F2EDD8',text2:'#B8B4A4',text3:'#6E6B60',
   bd:'rgba(242,237,216,0.08)',bd2:'rgba(242,237,216,0.15)',
-  serif:"'Fraunces',Georgia,serif",mono:"'Space Mono',monospace",sans:"'Plus Jakarta Sans',sans-serif"
+  serif:"'Chakra Petch',sans-serif",mono:"'Chakra Petch',monospace",sans:"'Chakra Petch',sans-serif"
 };
 
 function useInView(ref,margin='-40px'){
@@ -260,7 +260,7 @@ function AnimMetric({val,label,color=T.amber}){
   const c=useCountUp(num||0,v&&num!==null);
   return(
     <div ref={ref}>
-      <div style={{fontFamily:T.serif,fontStyle:'italic',fontSize:28,fontWeight:700,color:T.text,letterSpacing:'-0.02em',lineHeight:1}}>{num!==null?`${pre}${c.toFixed(dec)}${suf}`:val}</div>
+      <div style={{fontFamily:T.serif,fontSize:28,fontWeight:700,color:T.text,letterSpacing:'-0.02em',lineHeight:1}}>{num!==null?`${pre}${c.toFixed(dec)}${suf}`:val}</div>
       <div style={{fontFamily:T.mono,fontSize:9,color:T.text3,textTransform:'uppercase',letterSpacing:'0.08em',marginTop:5}}>{label}</div>
     </div>
   );
@@ -270,7 +270,7 @@ function AnimMetric({val,label,color=T.amber}){
 function SH({n,label,sub='',c=T.amber}){
   return(
     <div style={{position:'relative',marginBottom:52,paddingTop:8}}>
-      <div style={{position:'absolute',top:-48,left:-24,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:c,opacity:0.055,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em',zIndex:0}}>{n}</div>
+      <div style={{position:'absolute',top:-48,left:-24,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:c,opacity:0.055,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em',zIndex:0}}>{n}</div>
       <div style={{position:'relative',zIndex:1}}>
         <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:sub?10:0}}>
           <span style={{display:'inline-block',width:22,height:1.5,background:c,opacity:0.6,flexShrink:0}}></span>
@@ -309,7 +309,7 @@ function Nav(){
       <div style={{maxWidth:1280,margin:'0 auto',display:'flex',justifyContent:'space-between',alignItems:'center',height:60}}>
         <a href="#" style={{display:'flex',alignItems:'center',gap:9}}>
           <div className="pulse" style={{width:7,height:7,background:T.amber,borderRadius:1,flexShrink:0}}></div>
-          <span style={{fontFamily:T.serif,fontStyle:'italic',fontSize:17,fontWeight:700,letterSpacing:'-0.01em',color:T.text}}>Ahmad.dev</span>
+          <span style={{fontFamily:T.serif,fontSize:17,fontWeight:700,letterSpacing:'-0.01em',color:T.text}}>Ahmad.dev</span>
         </a>
         <div className={`nav-links${open?' open':''}`} style={{gap:28,alignItems:'center'}}>
           {ls.map(([l,h],i)=>{
@@ -356,7 +356,7 @@ function Hero(){
               <span style={{fontFamily:T.mono,fontSize:11,letterSpacing:'0.1em',textTransform:'uppercase',color:T.amber}}>Computer Engineer & AI Researcher</span>
             </div>
             <h1 style={{
-              fontFamily:T.serif,fontWeight:900,fontStyle:'italic',
+              fontFamily:T.serif,fontWeight:900,
               fontSize:'clamp(64px,11vw,148px)',
               lineHeight:0.88,letterSpacing:'-0.04em',color:T.text,userSelect:'none',
               opacity:rdy?1:0,transform:rdy?'translateY(0)':'translateY(40px)',
@@ -418,12 +418,12 @@ function Hero(){
 function Origin(){
   return(
     <section id="origin" className="sp" style={{padding:'100px 52px',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.amber,opacity:0.052,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>01</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.amber,opacity:0.052,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>01</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="Origin" sub="" c={T.amber}/>
         <div className="two-col reveal" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:72}}>
           <div>
-            <h2 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:28,fontWeight:700,lineHeight:1.25,letterSpacing:'-0.02em',color:T.text,borderLeft:`3px solid ${T.amber}`,paddingLeft:18}}>
+            <h2 style={{fontFamily:T.serif,fontSize:28,fontWeight:700,lineHeight:1.25,letterSpacing:'-0.02em',color:T.text,borderLeft:`3px solid ${T.amber}`,paddingLeft:18}}>
               Chasing the gap between what AI can do in a lab and what it actually does when someone's counting on it.
             </h2>
             <p style={{fontSize:16,lineHeight:1.82,color:T.text2,marginTop:24}}>I'm a Computer Science & Engineering graduate from the University of Toledo. My work has moved across autonomous drone systems, enterprise AI, sports analytics, and data engineering — not because I planned a portfolio, but because I follow whatever problem is genuinely hard.</p>
@@ -448,7 +448,7 @@ function Origin(){
             ))}
             <div style={{marginTop:16,padding:'20px',background:'rgba(242,237,216,0.025)',borderRadius:8,border:'1px solid rgba(242,237,216,0.08)'}}>
               <div style={{fontFamily:T.mono,fontSize:11,color:T.purple,letterSpacing:'0.12em',textTransform:'uppercase',marginBottom:10}}>Education</div>
-              <div style={{fontSize:16,fontWeight:600,color:T.text,fontFamily:T.serif,fontStyle:'italic'}}>University of Toledo</div>
+              <div style={{fontSize:16,fontWeight:600,color:T.text,fontFamily:T.serif}}>University of Toledo</div>
               <div style={{fontSize:14,color:T.text2,marginTop:3}}>B.S. Computer Science & Engineering · Minor in Mathematics</div>
               <div style={{fontFamily:T.mono,fontSize:10,color:T.amber,marginTop:8}}>2021 – 2026 · Graduated · GPA 3.23</div>
               <div style={{display:'flex',flexWrap:'wrap',gap:4,marginTop:12}}>
@@ -501,7 +501,7 @@ function Experience(){
   };
   return(
     <section id="experience" className="sp" style={{padding:'100px 52px',position:'relative',overflow:'hidden',background:'rgba(19,21,32,0.4)'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.blue,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>02</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.blue,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>02</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="The Path" sub="Five roles. Click any to expand the full story." c={T.blue}/>
         <div className="reveal" style={{position:'relative',paddingLeft:36}}>
@@ -532,7 +532,7 @@ function Experience(){
                             <span style={{fontFamily:T.mono,fontSize:10,color:j.c,letterSpacing:'0.1em',textTransform:'uppercase'}}>Present</span>
                           </div>
                         )}
-                        <h3 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:18,fontWeight:700,color:T.text,letterSpacing:'-0.01em',lineHeight:1.25,margin:0}}>{j.r}</h3>
+                        <h3 style={{fontFamily:T.serif,fontSize:18,fontWeight:700,color:T.text,letterSpacing:'-0.01em',lineHeight:1.25,margin:0}}>{j.r}</h3>
                         <div style={{fontFamily:T.mono,fontSize:12,color:j.c,marginTop:5,opacity:0.9}}>{j.co}</div>
                         {!isOpen&&<p style={{fontSize:14,color:T.text2,marginTop:7,lineHeight:1.6,maxWidth:560}}>{j.preview}</p>}
                       </div>
@@ -619,7 +619,7 @@ function Projects(){
   const p=sel!==null?projects[sel]:null;
   return(
     <section id="projects" className="sp" style={{padding:'100px 52px',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.amber,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>03</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.amber,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>03</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="Bodies of Work" sub="Each project a different operating condition. Click any card for the full case study." c={T.amber}/>
         <div className="reveal proj-grid" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
@@ -653,7 +653,7 @@ function Projects(){
                       </div>
                       <span style={{fontSize:14,color:isActive?proj.c:T.text3,transition:'transform 0.3s,color 0.2s',transform:isActive?'rotate(45deg)':'none',flexShrink:0}}>+</span>
                     </div>
-                    <h3 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:proj.span===2?17:15,fontWeight:700,color:T.text,lineHeight:1.3,marginBottom:8}}>{proj.n}</h3>
+                    <h3 style={{fontFamily:T.serif,fontSize:proj.span===2?17:15,fontWeight:700,color:T.text,lineHeight:1.3,marginBottom:8}}>{proj.n}</h3>
                     <p style={{fontSize:14,color:T.text2,lineHeight:1.65,marginBottom:12}}>{proj.fr}</p>
                     <div style={{display:'flex',flexWrap:'wrap',gap:4}}>
                       {proj.s.slice(0,proj.span===2?4:3).map(s=><Tag key={s} c={proj.c}>{s}</Tag>)}
@@ -674,7 +674,7 @@ function Projects(){
                   <span style={{fontFamily:T.mono,fontSize:11,color:T.text3}}>{p.idx}</span>
                   <span style={{fontFamily:T.mono,fontSize:11,color:T.text3}}>{p.tag}</span>
                 </div>
-                <h2 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:26,fontWeight:700,color:T.text,letterSpacing:'-0.02em',lineHeight:1.2,marginBottom:10}}>{p.n}</h2>
+                <h2 style={{fontFamily:T.serif,fontSize:26,fontWeight:700,color:T.text,letterSpacing:'-0.02em',lineHeight:1.2,marginBottom:10}}>{p.n}</h2>
                 <p style={{fontSize:16,fontWeight:500,color:T.text,lineHeight:1.55,maxWidth:640}}>{p.fr}</p>
               </div>
               <button onClick={()=>handleSel(sel)} aria-label="Close case study"
@@ -702,7 +702,7 @@ function Projects(){
             <div style={{display:'flex',flexWrap:'wrap',gap:8,marginTop:24,paddingTop:20,borderTop:'1px solid rgba(242,237,216,0.07)',marginBottom:18}}>
               {p.m.map(([v,l],j)=>(
                 <div key={j} style={{display:'flex',alignItems:'baseline',gap:6,padding:'6px 12px',background:`${p.c}0d`,border:`1px solid ${p.c}22`,borderRadius:5}}>
-                  <span style={{fontFamily:T.serif,fontStyle:'italic',fontSize:14,fontWeight:700,color:p.c,lineHeight:1}}>{v}</span>
+                  <span style={{fontFamily:T.serif,fontSize:14,fontWeight:700,color:p.c,lineHeight:1}}>{v}</span>
                   <span style={{fontFamily:T.mono,fontSize:10,color:T.text3,letterSpacing:'0.08em',textTransform:'uppercase'}}>{l}</span>
                 </div>
               ))}
@@ -719,14 +719,14 @@ function Projects(){
 function Research(){
   return(
     <section id="research" className="sp" style={{padding:'100px 52px',position:'relative',overflow:'hidden',background:'rgba(19,21,32,0.4)'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.orange,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>04</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.orange,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>04</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="Research & Publications" c={T.orange}/>
         <div className="two-col reveal" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:48,marginBottom:48}}>
           <ImgPh label="4-Pillars Taxonomy diagram" images={['Images/4-Pillars.png']} style={{width:'100%',aspectRatio:'4/3',borderRadius:8}}/>
           <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
             <Tag c={T.orange}>ACM Computing Surveys · Under Review</Tag>
-            <h3 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:28,fontWeight:700,color:T.text,letterSpacing:'-0.02em',lineHeight:1.2,marginTop:14}}>A Survey of Rogue Behaviors in Autonomous AI</h3>
+            <h3 style={{fontFamily:T.serif,fontSize:28,fontWeight:700,color:T.text,letterSpacing:'-0.02em',lineHeight:1.2,marginTop:14}}>A Survey of Rogue Behaviors in Autonomous AI</h3>
             <p style={{fontSize:15,lineHeight:1.78,color:T.text2,marginTop:14}}>Systematic analysis of 37 documented failures across autonomous vehicles, military drones, LLM agents, and multi-agent financial systems from 127 sources. Introduces the 4-Pillars Taxonomy and Contested-Environment Amplifier Model — revealing that human oversight degrades 62% under adversarial conditions while design-time controls degrade only 23%.</p>
             <div style={{marginTop:14,fontFamily:T.mono,fontSize:10,color:T.amber,letterSpacing:'0.04em'}}>First systematic framework mapping rogue behavior in deployed autonomous AI.</div>
             <div style={{display:'flex',flexWrap:'wrap',gap:5,marginTop:14}}>
@@ -746,7 +746,7 @@ function Research(){
           <div className="two-col featured-grid" style={{display:'grid',gridTemplateColumns:'280px 1fr',gap:0}}>
             <ImgPh label="Article feature photo" images={['Images/athletics_group_pics.png']} style={{width:'100%',height:'100%',minHeight:200,borderRadius:0}}/>
             <div style={{padding:'20px 28px',display:'flex',flexDirection:'column',justifyContent:'center'}}>
-              <h4 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:17,fontWeight:700,color:T.text,lineHeight:1.35}}>Toledo Athletics Data Internship Program Aids The Rockets, Spurs Student Careers</h4>
+              <h4 style={{fontFamily:T.serif,fontSize:17,fontWeight:700,color:T.text,lineHeight:1.35}}>Toledo Athletics Data Internship Program Aids The Rockets, Spurs Student Careers</h4>
               <div style={{fontFamily:T.mono,fontSize:10,color:T.teal,marginTop:8,letterSpacing:'0.04em'}}>UToledo Rockets · April 20, 2026</div>
               <p style={{fontSize:14,lineHeight:1.7,color:T.text2,marginTop:12}}>Featured for describing the goal of becoming an AI Engineer who builds end-to-end data systems that drive real decisions at scale, and how the internship bridged technical modeling work with direct communication to athletics leadership.</p>
               <a href="https://utrockets.com/news/2026/4/20/toledo-athletics-data-internship-program-aids-the-rockets-spurs-student-careers.aspx"
@@ -788,7 +788,7 @@ function Skills(){
   ];
   return(
     <section id="skills" className="sp" style={{padding:'100px 52px',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.purple,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>05</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.purple,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>05</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="Capabilities" c={T.purple}/>
         <div className="three-col reveal" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:10}}>
@@ -820,7 +820,7 @@ function Skills(){
                   onClick={()=>setOpenAward(isOpen?null:i)}>
                   <div style={{padding:'18px 22px',display:'flex',justifyContent:'space-between',alignItems:'flex-start'}}>
                     <div>
-                      <div style={{fontFamily:T.serif,fontStyle:'italic',fontSize:14,fontWeight:600,color:T.text}}>{a.t}</div>
+                      <div style={{fontFamily:T.serif,fontSize:14,fontWeight:600,color:T.text}}>{a.t}</div>
                       <div style={{fontSize:12,color:T.text2,marginTop:3}}>{a.d}</div>
                     </div>
                     <div style={{display:'flex',alignItems:'center',gap:8,flexShrink:0,marginLeft:10}}>
@@ -854,7 +854,7 @@ function Skills(){
                       <div style={{width:10,height:10,borderRadius:2,background:a.c}}></div>
                     </div>
                     <div style={{flex:1,minWidth:0}}>
-                      <div style={{fontFamily:T.serif,fontStyle:'italic',fontSize:14,fontWeight:600,color:T.text,lineHeight:1.3}}>{a.n}</div>
+                      <div style={{fontFamily:T.serif,fontSize:14,fontWeight:600,color:T.text,lineHeight:1.3}}>{a.n}</div>
                       <div style={{fontFamily:T.mono,fontSize:10,color:a.c,marginTop:3,opacity:0.85}}>{a.role}</div>
                       <div style={{fontSize:12,color:T.text3,marginTop:3,lineHeight:1.4}}>{a.short}</div>
                     </div>
@@ -880,7 +880,7 @@ function Skills(){
             </div>
             <div style={{flex:1}}>
               <div style={{fontFamily:T.mono,fontSize:11,color:T.purple,letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:8,opacity:0.9}}>Black Opal · Quantum Computing</div>
-              <div style={{fontFamily:T.serif,fontStyle:'italic',fontSize:20,fontWeight:700,color:T.text,lineHeight:1.2,letterSpacing:'-0.02em',marginBottom:10}}>Superposition</div>
+              <div style={{fontFamily:T.serif,fontSize:20,fontWeight:700,color:T.text,lineHeight:1.2,letterSpacing:'-0.02em',marginBottom:10}}>Superposition</div>
               <p style={{fontSize:14,lineHeight:1.7,color:T.text2,maxWidth:600,marginBottom:14}}>Qubit state manipulation, superposition principles, and measurement postulates. Foundational for quantum circuit design and quantum-enhanced autonomous systems research.</p>
               <div style={{display:'flex',flexWrap:'wrap',gap:5}}>
                 {['Quantum Computing','Qubits','Superposition','Quantum Circuits'].map(s=><Tag key={s} c={T.purple}>{s}</Tag>)}
@@ -911,7 +911,7 @@ function Now(){
   ];
   return(
     <section className="sp" style={{padding:'80px 52px',position:'relative',overflow:'hidden',background:'rgba(19,21,32,0.4)'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.teal,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>06</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.teal,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>06</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <div style={{display:'flex',alignItems:'baseline',gap:16,marginBottom:10}}>
           <div style={{display:'flex',alignItems:'center',gap:12}}>
@@ -976,15 +976,15 @@ function Testimonials(){
   ];
   return(
     <section className="sp" style={{padding:'100px 52px',position:'relative',overflow:'hidden'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.amber,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>07</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.amber,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>07</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="Testimonials" sub="Replace placeholder quotes with real endorsements from supervisors, collaborators, or colleagues." c={T.amber}/>
         <div className="three-col reveal" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:14}}>
           {quotes.map((q,i)=>(
             <div key={i} className="tilt bracket" style={{padding:'28px 26px',background:'rgba(242,237,216,0.025)',border:'1px solid rgba(242,237,216,0.08)',borderTop:`2px solid ${q.c}`,borderRadius:10,display:'flex',flexDirection:'column'}}
               onMouseMove={onTilt} onMouseLeave={offTilt}>
-              <div style={{fontFamily:T.serif,fontStyle:'italic',fontSize:52,lineHeight:1,color:q.c,opacity:0.4,marginBottom:12,letterSpacing:'-0.02em',userSelect:'none'}}>"</div>
-              <p style={{fontFamily:T.serif,fontStyle:'italic',fontSize:16,lineHeight:1.75,color:T.text2,flex:1,marginBottom:22}}>"{q.q}"</p>
+              <div style={{fontFamily:T.serif,fontSize:52,lineHeight:1,color:q.c,opacity:0.4,marginBottom:12,letterSpacing:'-0.02em',userSelect:'none'}}>"</div>
+              <p style={{fontFamily:T.serif,fontSize:16,lineHeight:1.75,color:T.text2,flex:1,marginBottom:22}}>"{q.q}"</p>
               <div style={{borderTop:'1px solid rgba(242,237,216,0.07)',paddingTop:16}}>
                 <div style={{fontSize:14,fontWeight:600,color:T.text,marginBottom:2}}>{q.name}</div>
                 <div style={{fontFamily:T.mono,fontSize:10,color:q.c,letterSpacing:'0.08em',textTransform:'uppercase',marginBottom:2}}>{q.title}</div>
@@ -1002,12 +1002,12 @@ function Testimonials(){
 function Contact(){
   return(
     <section id="contact" className="sp" style={{padding:'100px 52px 80px',position:'relative',overflow:'hidden',background:'rgba(19,21,32,0.4)'}}>
-      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,fontStyle:'italic',color:T.amber,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>08</div>
+      <div style={{position:'absolute',top:-20,left:-16,fontFamily:T.serif,fontSize:'clamp(88px,14vw,200px)',fontWeight:900,color:T.amber,opacity:0.045,lineHeight:1,userSelect:'none',pointerEvents:'none',letterSpacing:'-0.04em'}}>08</div>
       <div style={{maxWidth:1280,margin:'0 auto',position:'relative',zIndex:1}}>
         <SH n="" label="Contact" c={T.amber}/>
         <div className="two-col reveal" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:80}}>
           <div>
-            <h2 style={{fontFamily:T.serif,fontStyle:'italic',fontSize:36,fontWeight:700,color:T.text,letterSpacing:'-0.03em',lineHeight:1.15}}>
+            <h2 style={{fontFamily:T.serif,fontSize:36,fontWeight:700,color:T.text,letterSpacing:'-0.03em',lineHeight:1.15}}>
               Let's build something<br/><span style={{color:T.amber}}>that actually works.</span>
             </h2>
             <p style={{fontSize:16,lineHeight:1.75,color:T.text2,marginTop:18,maxWidth:400}}>Open to research collaborations, engineering roles, and interesting problems where AI meets the real world.</p>
